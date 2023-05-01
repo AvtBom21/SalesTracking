@@ -18,4 +18,10 @@
                 <li><a href="order_details.php">Order Details</a></li>
             </ul>
         </nav>
+        <script>
+            // Reload website tự động
+            setTimeout(function() {
+                location.reload();
+            }, 3000); // reloads after 3 seconds
+        </script>
     </header>
