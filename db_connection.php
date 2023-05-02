@@ -4,11 +4,14 @@ $username = "root";
 $password = "";
 $dbname = "SalesTracking";
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+function get_connection()
+    {
+        $conn = new mysqli(HOST, USER, PASS, DB);
+        if ($conn->connect_errno) {
+            $resultjs = array('code'=>1,'error'=> 'can not connect to database');
+            die(json_encode($resultjs));
+        }
+        $conn->set_charset("utf8");
+        return $conn;
+    }
 ?>
